@@ -1,0 +1,264 @@
+/* VoiceCalculator.css
+   Premium Gold-Black theme
+   Full-page soft floating gold particles, listening pulse, entrance animations
+*/
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --bg: #060606;
+  --panel: rgba(255,255,255,0.04);
+  --gold: #f7cc52;
+  --gold-strong: #f8cc4b;
+  --muted: #bdbdbd;
+  --glass-border: rgba(255, 215, 0, 0.14);
+}
+
+/* ===== Page ===== */
+.voice-calc-page {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
+  color: var(--gold);
+  font-family: 'Poppins', sans-serif;
+  padding: 48px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Full-page Particles Layer ===== */
+.particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particles .particle {
+  position: absolute;
+  bottom: -10%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,232,150,0.95), rgba(248,204,75,0.6));
+  opacity: 0.85;
+  filter: blur(0.8px) saturate(1.2);
+  transform: translateY(0) translateX(0) scale(1);
+  animation-name: floatUp, sway, twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 0;
+  will-change: transform, opacity;
+}
+
+/* Use the --i custom property (0..n) to vary each particle */
+.particles .particle {
+  left: calc(var(--i) * 5% + 2%);
+  animation-duration: calc(10s + (var(--i) * 0.9s));
+  animation-delay: calc(-1s * var(--i));
+  opacity: calc(0.25 + (var(--i) * 0.02));
+  transform-origin: center;
+}
+
+/* Keyframes */
+@keyframes floatUp {
+  0% { transform: translateY(0) translateX(0) scale(0.85); }
+  50% { transform: translateY(-60vh) translateX(8px) scale(1.15); }
+  100% { transform: translateY(-120vh) translateX(-6px) scale(0.9); }
+}
+@keyframes sway {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(12px); }
+  100% { transform: translateX(-8px); }
+}
+@keyframes twinkle {
+  0% { opacity: 0.15; filter: blur(1px); }
+  30% { opacity: 0.9; filter: blur(0.4px) saturate(1.4); }
+  100% { opacity: 0.1; filter: blur(1.2px); }
+}
+
+/* ===== Card (calculator area) ===== */
+.calc-wrapper {
+  position: relative;
+  z-index: 2; /* above particles */
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+  animation: cardEntrance 600ms cubic-bezier(.2,.9,.3,1) both;
+}
+
+@keyframes cardEntrance {
+  from { transform: translateY(10px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.voice-calc-page h1 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--gold-strong);
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+/* Back button */
+.btn-back {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 220ms ease;
+  font-weight: 500;
+}
+.btn-back:hover {
+  color: var(--gold);
+  border-color: rgba(248,204,75,0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* ===== Panel sections ===== */
+.panel {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(6px) saturate(1.05);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  color: #efe6cc;
+}
+
+/* small description */
+.panel p { margin: 0; color: #d5caa1; }
+
+/* controls row */
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  align-items: center;
+}
+
+/* Listen button (big) */
+.btn-listen {
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+  border: 2px solid rgba(248,204,75,0.18);
+  color: var(--gold-strong);
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+  position: relative;
+  overflow: visible;
+}
+
+/* microphone icon (simple) */
+.btn-listen svg { width: 18px; height: 18px; display: block; }
+
+/* Clear button */
+.btn-clear {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--muted);
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Listening pulse: when parent (.voice-calc-page) has .listening */
+.voice-calc-page.listening .btn-listen {
+  box-shadow:
+    0 0 0 4px rgba(248,204,75,0.06),
+    0 8px 30px rgba(248,204,75,0.08),
+    0 0 40px rgba(248,204,75,0.09);
+  transform: translateY(-2px);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* small ring element */
+.btn-listen::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 220ms;
+}
+.voice-calc-page.listening .btn-listen::after {
+  opacity: 1;
+  box-shadow: 0 0 30px rgba(248,204,75,0.12);
+  animation: ringGrow 1.6s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 8px 20px rgba(248,204,75,0.04), 0 0 0 0 rgba(248,204,75,0.06); }
+  50% { box-shadow: 0 8px 28px rgba(248,204,75,0.08), 0 0 40px 8px rgba(248,204,75,0.05); }
+  100% { box-shadow: 0 8px 20px rgba(248,204,75,0.04), 0 0 0 0 rgba(248,204,75,0.02); }
+}
+@keyframes ringGrow {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  70% { transform: scale(1.15); opacity: 0.12; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+/* ===== Data boxes (transcript & result) ===== */
+.data-box {
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255,215,0,0.06);
+  color: #efe6cc;
+  font-weight: 500;
+}
+
+/* error style */
+.data-box .error {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+/* ===== Tips list ===== */
+.tips ul {
+  margin: 8px 0 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* small responsive tweaks */
+@media (max-width: 640px) {
+  .voice-calc-page { padding: 28px 14px; }
+  .voice-calc-page h1 { font-size: 1.6rem; }
+  .controls { flex-direction: column; align-items: stretch; }
+  .btn-listen { width: 100%; justify-content: center; }
+}
+
+/* small subtle hover lift */
+.panel:hover { transform: translateY(-4px); transition: transform 280ms ease; }

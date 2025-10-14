@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# Databases and logs
+*.db
+*.sqlite3
+*.log
+
+# Node / Vite
+node_modules/
+dist/

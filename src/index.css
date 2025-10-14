@@ -1,0 +1,35 @@
+/* Tailwind Base Imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------
+   FADE-IN ANIMATION
+---------------------------- */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 2s ease forwards;
+}
+
+/* ----------------------------
+   TYPEWRITER EFFECT
+---------------------------- */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+.animate-typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: typewriter 4s steps(40) 1s forwards, blinkCursor 0.75s step-end infinite;
+}

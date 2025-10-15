@@ -44,7 +44,7 @@ Before running the project, ensure you have:
 
 🧱 Setup Instructions
  1. Clone the Repository
-```bash
+bash
 git clone https://github.com/Bishal-2304/AI_Unleashed_Final_Project-2025.git
 cd AI_Unleashed_Final_Project-2025
 2. Setup the Backend (Flask)
@@ -58,6 +58,8 @@ npm run dev
 4. Environment Variables
 Create a .env file in the server directory and include:
 SECRET_KEY=your_secret_key
+
+---
 
 🖱 Usage
 Launch both frontend and backend servers.
@@ -76,6 +78,8 @@ Gesture	Action
 ✌ Two Fingers Up	Right Click
 🖖 Five Fingers	Exit or Stop Tracking
 All gestures are tracked in real-time using MediaPipe Hands and mapped to system cursor control using PyAutoGUI.
+
+---
 
 📂 Folder Structure
 📦 project-root
@@ -106,6 +110,8 @@ All gestures are tracked in real-time using MediaPipe Hands and mapped to system
 │
 └── README.md
 
+---
+
 🤝 Contributing
 Contributions are welcome!
 If you’d like to enhance features, improve accuracy, or extend functionality:
@@ -118,12 +124,16 @@ Push to your fork
 git push origin feature/your-feature-name
 Submit a Pull Request 🚀
 
+---
+
 🙏 Acknowledgments
 Special thanks to:
 MediaPipe and OpenCV teams for real-time hand & eye tracking models.
 Flask and React communities for powerful and flexible frameworks.
 Google Web Speech API for enabling seamless voice recognition.
 Mentors, peers, and contributors who provided support and feedback throughout development.
+
+---
 
 🧠 Future Enhancements
 📡 Multi-gesture recognition for scroll and zoom actions

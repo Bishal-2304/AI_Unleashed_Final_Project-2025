@@ -114,7 +114,7 @@ Choose your preferred mode:
 
 🎙 Voice Control Calculator
 
-Follow the on-screen manual for each mode.
+### Follow the on-screen manual for each mode.
 
 🖐 Gesture Definitions (Hand Tracking Mode)
 
@@ -137,32 +137,59 @@ All gestures are tracked in real-time using MediaPipe Hands and mapped to system
 ## 📂 Folder Structure
 
 📦 project-root
+
 ├── server/
+
 │   ├── app.py
+
 │   ├── requirements.txt
+
 │   ├── .env
+
 │   └── ... (API endpoints for Eye and Hand tracking)
+
 │
+
 ├── client/
+
 │   ├── src/
+
 │   │   ├── pages/
+
 │   │   │   ├── ModeSelection.jsx
+
 │   │   │   ├── VoiceCalculator.jsx
+
 │   │   │   ├── VoiceManual.jsx
+
 │   │   │   ├── EyeManual.jsx
+
 │   │   │   ├── HandManual.jsx
+
 │   │   │   └── CameraFeed.jsx
+
 │   │   ├── App.jsx
+
 │   │   ├── main.jsx
+
 │   │   └── lib/
+
 │   │       └── authFetch.js
+
 │   ├── styles/
+
 │   │   ├── App.css
+
 │   │   ├── index.css
+
 │   │   └── Voice-bg.jpg
+
 │   └── package.json
+
 │
+
 └── README.md
+
 
 ---
 

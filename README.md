@@ -1,6 +1,7 @@
 AI-Based Multi-Mode Human Computer Interaction System
 
-🧩 Overview
+### 🧩 Overview
+
 This project is an AI-driven Human-Computer Interaction (HCI) system that allows users to interact with their computer using Eye Movement, Hand Gestures, and Voice Commands.  
 
 It provides three distinct control modes:
@@ -15,7 +16,8 @@ This project aims to provide touchless control for accessibility, innovation, an
 
 ---
 
-✨ Features
+### ✨ Features
+
 👁 Eye Tracking Mode - Tracks the user’s eye gaze using webcam feed and moves the cursor accordingly. Supports blink detection for click actions. 
 
 ✋ Hand Tracking Mode - Detects hand movements and gestures using MediaPipe and OpenCV. Enables pointer movement, click (pinch), and drag operations. 
@@ -30,38 +32,49 @@ This project aims to provide touchless control for accessibility, innovation, an
 
 ---
 
- 🛠 Technologies Used
+ ### 🛠 Technologies Used
+ 
  Frontend - React.js, React Router, HTML5, CSS3 
+ 
  Backend - Flask (Python) 
+ 
  AI / CV Libraries - OpenCV, MediaPipe, dlib 
+ 
  Voice Recognition - Web Speech API
+ 
  Authentication - JWT (JSON Web Token), Flask-CORS 
+ 
  Utilities - dotenv, Numpy 
+ 
  Design Tools - Tailwind / Custom CSS, Modern minimalist UI 
 
 ---
 
-⚙ Installation
+## ⚙ Installation
 
-🔧 Prerequisites
+### 🔧 Prerequisites
 
 Before running the project, ensure you have:
+
 - Python 3.9
+
 - Node.js 18 and npm
+
 - Webcam and Microphone access enabled
+
 - Modern browser (Google Chrome / Microsoft Edge recommended)
 
 ---
 
-🧱 Setup Instructions
+## 🧱 Setup Instructions
 
-1. Clone the Repository:
-   
+### 1. Clone the Repository:
+'''bash  
 git clone https://github.com/Bishal-2304/AI_Unleashed_Final_Project-2025.git
 
 cd AI_Unleashed_Final_Project-2025
 
-2. Setup the Backend (Flask)
+### 2. Setup the Backend (Flask)
 
 cd server
 
@@ -69,7 +82,7 @@ pip install -r requirements.txt
 
 python app.py
 
-3. Setup the Frontend (React)
+### 3. Setup the Frontend (React)
 
 cd client
 
@@ -77,7 +90,7 @@ npm install
 
 npm run dev
 
-4. Environment Variables
+### 4. Environment Variables
 
 Create a .env file in the server directory and include:
 
@@ -85,7 +98,7 @@ SECRET_KEY=your_secret_key
 
 ---
 
-🖱 Usage
+## 🖱 Usage
 
 Launch both frontend and backend servers.
 
@@ -121,7 +134,7 @@ All gestures are tracked in real-time using MediaPipe Hands and mapped to system
 
 ---
 
-📂 Folder Structure
+## 📂 Folder Structure
 
 📦 project-root
 ├── server/
@@ -153,7 +166,7 @@ All gestures are tracked in real-time using MediaPipe Hands and mapped to system
 
 ---
 
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome!
 
@@ -177,7 +190,7 @@ Submit a Pull Request 🚀
 
 ---
 
-🙏 Acknowledgments
+## 🙏 Acknowledgments
 
 Special thanks to:
 
@@ -191,7 +204,7 @@ Mentors, peers, and contributors who provided support and feedback throughout de
 
 ---
 
-🧠 Future Enhancements
+## 🧠 Future Enhancements
 
 📡 Multi-gesture recognition for scroll and zoom actions
 

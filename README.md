@@ -43,18 +43,20 @@ Before running the project, ensure you have:
 ---
 
 🧱 Setup Instructions
- 1. Clone the Repository
-bash
+ 1. Clone the Repository:
 git clone https://github.com/Bishal-2304/AI_Unleashed_Final_Project-2025.git
 cd AI_Unleashed_Final_Project-2025
+
 2. Setup the Backend (Flask)
 cd server
 pip install -r requirements.txt
 python app.py
+
 3. Setup the Frontend (React)
 cd client
 npm install
 npm run dev
+
 4. Environment Variables
 Create a .env file in the server directory and include:
 SECRET_KEY=your_secret_key

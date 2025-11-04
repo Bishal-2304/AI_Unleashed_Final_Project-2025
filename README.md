@@ -1,4 +1,4 @@
-# Eye-Hand_Tracker
+# Eye-Hand-Tracker
 
 AI-Based Multi-Mode Human Computer Interaction System
 
